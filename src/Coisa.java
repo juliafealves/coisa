@@ -21,7 +21,9 @@ public class Coisa {
         contaLCC2.liberaEspaco(1);
         System.out.println(contaLCC2.atingiuCota());
         System.out.println(contaLCC2.toString());
-
+        /**
+         * Manipula as informações referente a disciplina.
+         */
         Disciplina prog2 = new Disciplina("PROGRAMACAO 2");
         prog2.cadastraHoras(4);
         prog2.cadastraNota(1, 5.0);

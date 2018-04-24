@@ -39,7 +39,7 @@ public class Disciplina {
     }
 
     public boolean aprovado(){
-        return (this.calcularMedia() >= MEDIA_APROVACAO);
+        return (this.calculaMedia() >= MEDIA_APROVACAO);
     }
 
     /**
@@ -47,14 +47,14 @@ public class Disciplina {
      * @return
      */
     public String toString(){
-        return this.nome + " " + this.horas + " " + this.calcularMedia() + " " + Arrays.toString(this.notas);
+        return this.nome + " " + this.horas + " " + this.calculaMedia() + " " + Arrays.toString(this.notas);
     }
 
     /**
      * Calcula a média aritméticas das notas.
      * @return
      */
-    private double calcularMedia(){
+    private double calculaMedia(){
         double soma = 0;
 
         for(int i = 0; i < notas.length; i++){
