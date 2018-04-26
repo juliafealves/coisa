@@ -14,11 +14,22 @@ public class Disciplina {
     private String nome;
     private int horas;
     private double[] notas;
+    private int[] pesos;
+    private int totalNotas;
 
     public Disciplina(String nome){
+        this(nome, QUANTIDADE_PADRAO_NOTAS);
+    }
+
+    public Disciplina(String nome, int quantidadeNotas){
         this.nome = nome;
+        this.notas = new double[quantidadeNotas];
         this.horas = 0;
-        this.notas = new double[QUANTIDADE_PADRAO_NOTAS];
+    }
+
+    public Disciplina(String nome, int quantidadeNotas, int[] pesos){
+        this(nome, quantidadeNotas);
+        this.pesos = pesos;
     }
 
     /**
@@ -51,16 +62,34 @@ public class Disciplina {
     }
 
     /**
-     * Calcula a média aritméticas das notas.
+     * Calcula a média das notas da disciplina.
      * @return
      */
     private double calculaMedia(){
+        if(this.pesos.length == 0){
+            return this.calculaMediaAritmetica();
+        }else{
+            return this.calculaMediaPonderada();
+        }
+    }
+
+    private double calculaMediaAritmetica(){
         double soma = 0;
 
-        for(int i = 0; i < notas.length; i++){
-            soma += notas[i];
+        for(int i = 0; i < this.notas.length; i++){
+            soma += this.notas[i];
         }
 
         return (soma / notas.length);
+    }
+
+    private double calculaMediaPonderada(){
+        double soma = 0;
+
+        for(int i = 0; i < this.notas.length; i++){
+            soma += this.notas[i] * this.pesos[i];
+        }
+
+        return (soma / 10);
     }
 }

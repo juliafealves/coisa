@@ -1,5 +1,6 @@
 import disciplina.Disciplina;
 import laboratorio.ContaLaboratorio;
+import saude.Saude;
 
 /**
  * Laboratório de Programação 2 - Lab 2
@@ -33,5 +34,20 @@ public class Coisa {
         prog2.cadastraNota(4, 10.0);
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
+
+        /**
+         *
+         */
+        Saude saude = new Saude();
+        System.out.println(saude.getStatusGeral());
+        saude.defineSaudeMental("boa");
+        saude.defineSaudeFisica("boa");
+        System.out.println(saude.getStatusGeral());
+        saude.defineSaudeMental("fraca");
+        saude.defineSaudeFisica("fraca");
+        System.out.println(saude.getStatusGeral());
+        saude.defineSaudeMental("boa");
+        saude.defineSaudeFisica("fraca");
+        System.out.println(saude.getStatusGeral());
     }
 }
