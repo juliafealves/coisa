@@ -1,5 +1,7 @@
 package cantina;
 
+import util.Utilitarios;
+
 import java.util.Arrays;
 
 /**
@@ -18,6 +20,7 @@ public class ContaCantina {
 
     public ContaCantina(String nomeCantina){
         this.nomeCantina = nomeCantina;
+        this.detalhes = new String[0];
     }
 
     /**
@@ -41,17 +44,17 @@ public class ContaCantina {
         this.detalhes = detalheCopia;
     }
 
-    /**
-     * @// TODO: 26/04/18 Concluir listagem.
-     * @return
-     */
     public String listaDetalhes() {
         String listagem = "";
-        int tamanhoDetalhe = this.detalhes.length;
-        int contador = 0;
+        String[] detalhesInverso = Utilitarios.inverter(this.detalhes);
+        int limite = detalhesInverso.length;
 
-        for(int i = tamanhoDetalhe - 1; i < tamanhoDetalhe - 6; i--){
-            listagem += this.detalhes[i] + System.lineSeparator();
+        if(limite > 5){
+            limite = 5;
+        }
+
+        for(int i = 0; i < limite; i++){
+            listagem += detalhesInverso[i] + System.lineSeparator();
         }
 
         return listagem;

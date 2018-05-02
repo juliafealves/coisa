@@ -66,7 +66,7 @@ public class Disciplina {
      * @return
      */
     private double calculaMedia(){
-        if(this.pesos.length == 0){
+        if(this.pesos == null){
             return this.calculaMediaAritmetica();
         }else{
             return this.calculaMediaPonderada();

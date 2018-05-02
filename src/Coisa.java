@@ -1,3 +1,4 @@
+import cantina.ContaCantina;
 import disciplina.Disciplina;
 import laboratorio.ContaLaboratorio;
 import saude.Saude;
@@ -36,7 +37,7 @@ public class Coisa {
         System.out.println(prog2.toString());
 
         /**
-         *
+         * Manipulas as informações referente a saúde
          */
         Saude saude = new Saude();
         System.out.println(saude.getStatusGeral());
@@ -49,5 +50,17 @@ public class Coisa {
         saude.defineSaudeMental("boa");
         saude.defineSaudeFisica("fraca");
         System.out.println(saude.getStatusGeral());
+        /**
+         * Manipula as informações de conta da cantina.
+         */
+        ContaCantina cantina = new ContaCantina("Dona Florzinha");
+        cantina.cadastraLanche(10, 500, "Lanche da tarde");
+        cantina.cadastraLanche(3, 200, "Café da manhã");
+        cantina.cadastraLanche(2, 50, "Balas");
+        cantina.cadastraLanche(5, 250, "Cuzcuz do mal");
+        cantina.cadastraLanche(1, 100, "Bolo de cueca");
+        cantina.cadastraLanche(4, 150, "Arroz de Leite");
+        System.out.println(cantina.listaDetalhes());
+
     }
 }
