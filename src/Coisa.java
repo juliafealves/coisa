@@ -47,12 +47,20 @@ public class Coisa {
         saude.defineSaudeMental("fraca");
         saude.defineSaudeFisica("fraca");
         System.out.println(saude.getStatusGeral());
+        saude.defineEmoji("=)");
+        System.out.println(saude.getStatusGeral());
         saude.defineSaudeMental("boa");
         saude.defineSaudeFisica("fraca");
         System.out.println(saude.getStatusGeral());
         /**
          * Manipula as informações de conta da cantina.
          */
+        ContaCantina mulherDoBolo = new ContaCantina("Mulher do Bolo");
+        mulherDoBolo.cadastraLanche(2, 500, null);
+        mulherDoBolo.cadastraLanche(1, 500, null);
+        mulherDoBolo.pagaConta(200);
+        System.out.println(mulherDoBolo.toString());
+
         ContaCantina cantina = new ContaCantina("Dona Florzinha");
         cantina.cadastraLanche(10, 500, "Lanche da tarde");
         cantina.cadastraLanche(3, 200, "Café da manhã");
